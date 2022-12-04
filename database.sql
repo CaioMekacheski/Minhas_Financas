@@ -1,6 +1,7 @@
 create database minhas_financas;
 use minhas_financas;
 
+
 create table profissao
 (
 	id int not null auto_increment,
@@ -13,13 +14,23 @@ create table profissao
     primary key(id)
 );
 
+create table usuario
+(
+	id int not null auto_increment,
+    nome varchar(45),
+    senha varchar(100),
+    primary key(id)
+);
+
 create table salario
 (
 	id int not null auto_increment,
+    usuario int not null,
     profissao int not null,
     dias_trabalhados int,
     total decimal(9,2),
-    primary key(id),
+    primary key(id, usuario),
+	foreign key(usuario) references usuario(id),
     foreign key(profissao) references profissao(id) 
 );
 
@@ -48,11 +59,13 @@ create table ferias
 create table rendimentos
 (
 	id int not null auto_increment,
+    usuario int not null,
     salario int not null,
     salario_13 int not null,
     ferias int not null,
     total_rendimentos decimal(9,2),
-    primary key(id),
+    primary key(id, usuario),
+	foreign key(usuario) references salario(usuario),
     foreign key(salario) references salario(id),
     foreign key(salario_13) references salario_13(id),
     foreign key(ferias) references ferias(id)
@@ -61,10 +74,12 @@ create table rendimentos
 create table despesa
 (
 	id int not null auto_increment,
+    usuario int not null,
     descricao varchar(45),
     vencimento date,
     valor_despesa decimal(9,2),
-    primary key(id)
+    primary key(id),
+    foreign key(usuario) references rendimentos(usuario)
 );
 
 create table lista_despesas
