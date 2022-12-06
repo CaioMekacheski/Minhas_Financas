@@ -1,8 +1,10 @@
-create database minhas_financas;
+
+#Database
+create database if not exists minhas_financas;
 use minhas_financas;
 
-
-create table profissao
+# Tabela Profissão
+create table if not exists minhas_financas.profissao
 (
 	id int not null auto_increment,
     nome varchar(45),
@@ -14,7 +16,8 @@ create table profissao
     primary key(id)
 );
 
-create table usuario
+# Tabela Usuario
+create table if not exists minhas_financas.usuario
 (
 	id int not null auto_increment,
     nome varchar(45),
@@ -22,7 +25,8 @@ create table usuario
     primary key(id)
 );
 
-create table salario
+# Tabela Salário
+create table if not exists minhas_financas.salario
 (
 	id int not null auto_increment,
     usuario int not null,
@@ -34,7 +38,8 @@ create table salario
     foreign key(profissao) references profissao(id) 
 );
 
-create table salario_13
+# Tabela 13º Salário
+create table if not exists minhas_financas.salario_13
 (
 	id int not null auto_increment,
     salario int not null,
@@ -45,7 +50,8 @@ create table salario_13
     foreign key(salario) references salario(id)
 );
 
-create table ferias
+# Tabela Férias
+create table if not exists minhas_financas.ferias
 (
 	id int not null auto_increment,
     salario int not null,
@@ -56,7 +62,8 @@ create table ferias
     foreign key(salario) references salario(id)
 );
 
-create table rendimentos
+# Tabela Rendimentos
+create table if not exists minhas_financas.rendimentos
 (
 	id int not null auto_increment,
     usuario int not null,
@@ -71,7 +78,8 @@ create table rendimentos
     foreign key(ferias) references ferias(id)
 );
 
-create table despesa
+# Tabela Despesa
+create table if not exists minhas_financas.despesa
 (
 	id int not null auto_increment,
     usuario int not null,
@@ -82,7 +90,8 @@ create table despesa
     foreign key(usuario) references rendimentos(usuario)
 );
 
-create table lista_despesas
+# Tabela Lista Despesas
+create table if not exists minhas_financas.lista_despesas
 (
 	id int not null auto_increment,
     despesa int not null,
