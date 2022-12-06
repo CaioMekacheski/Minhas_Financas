@@ -93,5 +93,5 @@ Java e MySQL.
 
 Diagrama ER criado no mysql workbench:
 
-![atividade2_1diagrama_er_caiomekacheski](https://user-images.githubusercontent.com/106687263/205199665-5c37350d-8d74-4f06-9059-619ccc2ad720.png)
-# Minhas_Financas
+![diagrama_er_minhas_financas](https://user-images.githubusercontent.com/106687263/205794167-70ae81f5-ed77-49c6-8205-f4d2b65ddea8.png)
+
