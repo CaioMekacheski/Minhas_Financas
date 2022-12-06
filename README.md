@@ -27,14 +27,22 @@ O aplicativo é direcionado ao público geral, que necessita de um controle maio
 Regras de Negócio:
 
 RN 001: <O salário bruto corresponde a soma do salário base com o adicional.>
+
 RN 002: <O adicional corresponde a uma porcentagem do salário base.>
+
 RN 003: <O salário líquido corresponde a subtração do desconto do salário bruto.>
+
 RN 004: <O desconto corresponde a uma porcentagem do salário bruto.>
+
 RN 005: <O 13º salário corresponde ao valor do salário bruto dividido por 12 e depois multiplicado pelos meses trabalhados.>
+
 RN 006: <As férias correspondem ao valor do salário bruto dividido por 12, depois multiplicado pelos meses trabalhados,
 mais 1/3 e menos o desconto.>
+
 RN 007: <O total de rendimentos corresponde a soma do salário, do 13º e das férias>
+
 RN 008: <O total de despesas corresponde a soma de todas as despesas cadastradas>
+  
 RN 009: <A diferença entre o total de rendimentos e o total de despesas, corresponde a subtração do segundo pelo primeiro>
 
 Necessidade Observada:
